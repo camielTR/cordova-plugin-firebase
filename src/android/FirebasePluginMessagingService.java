@@ -74,7 +74,8 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
     // [END_EXCLUDE]
     
     Log.d(TAG, "FirebasePluginMessagingService onMessageReceived called");
-    startActivity(new Intent(this, SplashActivity.class));
+    Intent intent = new Intent(this, SplashActivity.class);
+    this.cordova.getActivity().startActivity(intent);
 
 
     // Pass the message to the receiver manager so any registered receivers can decide to handle it
